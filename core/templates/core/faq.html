@@ -1,0 +1,172 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<style>
+    .tab {
+        overflow: hidden;
+    }
+    .tab-content {
+        max-height: 0;
+        transition: all 0.5s;
+    }
+    input:checked + .tab-label .test {
+        background-color: #FF93CA;
+    }
+    input:checked + .tab-label .test svg {
+        transform: rotate(180deg);
+        stroke: #fff;
+    }
+    input:checked + .tab-label::after {
+        transform: rotate(90deg);
+    }
+    input:checked ~ .tab-content {
+        max-height: 100vh;
+    }
+</style>
+
+<main class="w-2/5 p-8 mx-auto mt-20">
+    <section class="shadow rounded-[12px]">
+        <div class="tabs">
+            <div class="border-b tab">
+                <div class="border-l-2 border-transparent relative">
+                    <input class="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck1">
+                    <header class="flex justify-between items-center p-5 ml-20 pr-8 cursor-pointer select-none tab-label" for="chck1">
+                        <span class="text-grey-darkest font-thin text-xl">
+                            Vous avez un magasin physique?
+                        </span>
+                        <div class="rounded-full border border-[#FF93CA] w-7 h-7 flex items-center justify-center test">
+                            <!-- icon by feathericons.com -->
+                            <svg aria-hidden="true" class="" data-reactid="266" fill="none" height="24" stroke="#FF93CA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="6 9 12 15 18 9">
+                                </polyline>
+                            </svg>
+                        </div>
+                    </header>
+                    <div class="tab-content">
+                        <div class="ml-28 pr-8 pb-5 text-sm text-[#707070]">
+                            <ul class="pl-4">
+                                <li class="pb-2">
+                                    Non, nous n'avons pas encore de boutique physique, mais cela pourrait être une option à l'avenir.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b tab">
+                <div class="border-l-2 border-transparent relative">
+                    <input class="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck2">
+                    <header class="flex justify-between items-center p-5 ml-20 pr-8 cursor-pointer select-none tab-label" for="chck2">
+                        <span class="text-grey-darkest font-thin text-xl">
+                            Dans quels pays peut-on acheter en ligne?
+                        </span>
+                        <div class="rounded-full border border-[#FF93CA] w-7 h-7 flex items-center justify-center test">
+                            <!-- icon by feathericons.com -->
+                            <svg aria-hidden="true" class="" data-reactid="266" fill="none" height="24" stroke="#FF93CA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="6 9 12 15 18 9">
+                                </polyline>
+                            </svg>
+                        </div>
+                    </header>
+                    <div class="tab-content">
+                        <div class="ml-28 pr-8 pb-5 text-sm text-[#707070]">
+                            <ul class="pl-4">
+                                <li class="pb-2">
+                                    Pour l'instant, vous ne pouvez les acheter que dans les pays européens.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b tab">
+                <div class="border-l-2 border-transparent relative">
+                    <input class="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3">
+                    <header class="flex justify-between items-center p-5 ml-20 pr-8 cursor-pointer select-none tab-label" for="chck3">
+                        <span class="text-grey-darkest font-thin text-xl">
+                            Je recevrai le même produit que celui présenté sur la photo?
+                        </span>
+                        <div class="rounded-full border border-[#FF93CA] w-7 h-7 flex items-center justify-center test">
+                            <!-- icon by feathericons.com -->
+                            <svg aria-hidden="true" class="" data-reactid="266" fill="none" height="24" stroke="#FF93CA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="6 9 12 15 18 9">
+                                </polyline>
+                            </svg>
+                        </div>
+                    </header>
+                    <div class="tab-content">
+                        <div class="ml-28 pr-8 pb-5 text-sm text-[#707070]">
+                            <ul class="pl-4">
+                                <li class="pb-2">
+                                    Oui, tous nos produits sont fabriqués et photographiés par nos soins.   
+                                </li>
+                                <li class="pb-2">
+                                    Si vous avez des questions, contactez-nous et nous nous ferons un plaisir de vous envoyer une vidéo plus détaillée.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b tab">
+                <div class="border-l-2 border-transparent relative">
+                    <input class="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3">
+                    <header class="flex justify-between items-center p-5 ml-20 pr-8 cursor-pointer select-none tab-label" for="chck3">
+                        <span class="text-grey-darkest font-thin text-xl">
+                            Est-il possible de retourner un produit?
+                        </span>
+                        <div class="rounded-full border border-[#FF93CA] w-7 h-7 flex items-center justify-center test">
+                            <!-- icon by feathericons.com -->
+                            <svg aria-hidden="true" class="" data-reactid="266" fill="none" height="24" stroke="#FF93CA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="6 9 12 15 18 9">
+                                </polyline>
+                            </svg>
+                        </div>
+                    </header>
+                    <div class="tab-content">
+                        <div class="ml-28 pr-8 pb-5 text-sm text-[#707070]">
+                            <ul class="pl-4">
+                                <li class="pb-2">
+                                    Non, ce n'est pas possible, car il s'agit de produits qui ne peuvent pas être revendus et qui doivent être jetés.
+                                </li>
+                                <li class="pb-2">
+                                    Faites donc vos achats en toute connaissance de cause
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b tab">
+                <div class="border-l-2 border-transparent relative">
+                    <input class="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3">
+                    <header class="flex justify-between items-center p-5 ml-20 pr-8 cursor-pointer select-none tab-label" for="chck3">
+                        <span class="text-grey-darkest font-thin text-xl">
+                            Que dois-je faire si je reçois un produit incorrect ?
+                        </span>
+                        <div class="rounded-full border border-[#FF93CA] w-7 h-7 flex items-center justify-center test">
+                            <!-- icon by feathericons.com -->
+                            <svg aria-hidden="true" class="" data-reactid="266" fill="none" height="24" stroke="#FF93CA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="6 9 12 15 18 9">
+                                </polyline>
+                            </svg>
+                        </div>
+                    </header>
+                    <div class="tab-content">
+                        <div class="ml-28 pr-8 pb-5 text-sm text-[#707070]">
+                            <ul class="pl-4">
+                                <li class="pb-2">
+                                    Si un produit est expédié de manière incorrecte, vous devez nous contacter en indiquant vos coordonnées 
+                                    et en envoyant une photo de la commande que vous venez de recevoir. 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

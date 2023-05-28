@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
+    <div class="products w-full">
+        <h1 class="mb-5 text-3xl">Mode de Paiement</h1>
+
+        <div class="w-full pr-6">
+            <div class="mb-6 p-6 bg-gray-100 rounded-xl">
+                <div class="flex space-x-6">
+                    <div class="w-1/2 mb-4">
+                        <label class="inline-block mb-2">Prenom</label>
+                        <input type="text" class="w-full p-5 rounded-xl">
+                    </div>
+
+                    <div class="w-1/2 mb-4">
+                        <label class="inline-block mb-2">Nom</label>
+                        <input type="text" class="w-full p-5 rounded-xl">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="inline-block mb-2">Adresse</label>
+                    <input type="text" class="w-full p-5 rounded-xl">
+                </div>
+
+                <div class="flex space-x-6">
+                    <div class="w-1/2 mb-4">
+                        <label class="inline-block mb-2">Code Postal</label>
+                        <input type="text" class="w-full p-5 rounded-xl">
+                    </div>
+
+                    <div class="w-1/2 mb-4">
+                        <label class="inline-block mb-2">Ville</label>
+                        <input type="text" class="w-full p-5 rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 p-6 bg-gray-100 rounded-xl">
+                <h2 class="mb-5 uppercase text-lg">Coordonnées</h2>
+
+                <div class="mb-4">
+                    <label class="inline-block mb-2">Email</label>
+                    <input type="email" class="w-full p-5 rounded-xl">
+                </div>
+
+                <div class="mb-4">
+                    <label class="inline-block mb-2">Téléphone</label>
+                    <input type="phone" class="w-full p-5 rounded-xl">
+                </div>
+            </div>
+
+            <div class="mb-6 p-6 bg-gray-100 rounded-xl">
+                <h2 class="mb-5 uppercase text-lg">Payment information</h2>
+                <label class="inline-block mb-2">Numéro de carte</label>
+                <input type="email" class="w-full p-5 rounded-xl">
+                <label class="inline-block mt-2 mb-2">Date d'expiration</label>
+                <input type="date" class="w-full p-5 rounded-xl">
+                <label class="inline-block mt-2 mb-2">CVV</label>
+                <input type="cvv" class="w-full p-5 rounded-xl">
+            </div>
+
+            <div class="mb-6 p-6 bg-gray-100 rounded-xl">
+                <div class="mb-6 flex justify-between">
+                    <span class="font-semibold">Total: {{order.get_cart_total|floatformat:2}} €</span>
+                    <a href="#" class="h-[30px] w-[150px] bg-[#ef5ea6] hover:bg-[#fed6ec] text-white flex justify-center items-center rounded-full transition duration-700 ease-in-out">Acherter</a>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+{% endblock %}

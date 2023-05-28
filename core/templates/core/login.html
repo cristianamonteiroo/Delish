@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body class="bg-no-repeat bg-cover" style="background-image:url('{% static "login/backgroud.png" %}')">
+    <div class="flex w-[500px] min-h-screen flex-col justify-center items-center m-auto py-12">
+        <div class="">
+            <img class="mx-auto h-[200px] w-auto" src="{% static "logo.png" %}" alt="">
+            <h2 class="mt-10 text-center text-4xl font-bold leading-9 tracking-tight text-[#FE9BC7]">SE CONNECTER</h2>
+        </div>
+        <div class="mt-10 w-full">
+            {% for message in messages %}
+            <div class="font-bold text-red-700" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <form method="post" action="/login" action="#" method="POST">
+                {% csrf_token %}
+                <div class="relative z-0 mt-2">
+                    <input type="text" id="Name" name="username" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" placeholder=" ">
+                    <label for="Name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FE9BC7] peer-focus:dark:text-[#FE9BC7] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
+                </div>
+        
+                <div>
+                    <div class="relative z-0 mt-7">
+                        <input type="password" id="Password" name="pass1" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" placeholder=" ">
+                        <label for="Password" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FE9BC7] peer-focus:dark:text-[#FE9BC7] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                    </div>
+                    <a href="#" class="flex justify-end text-sm text-[#707070] hover:text-[#FE9BC7]">j'ai oublié le mot passe</a>
+
+                    <div class="flex flex-col items-center">
+                        <button type="submit" class="w-[250px] h-[40px] text-xl flex items-center justify-center bg-[#FED6EC] hover:bg-[#FE9BC7] hover:text-white mt-10 text-white font-bold py-1 px-2 rounded-full transition ease-in-out duration-700">CONTINUER</button>
+                    </div>
+                    <p class="mt-20 text-center text-sm text-gray-500">Vous n'avez pas encore de compte ?</p>
+                    <p class="mt-4 text-center text-xl"><a href="/register" class="font-semibold text-sm leading-6 text-[#FE9BC7]">Inscrivez-vous ici</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

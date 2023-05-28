@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="text-gray-600 body-font bg-white dark:bg-slate-900">
+    <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+            <img class="object-cover object-center rounded" alt="hero" src="{% static "aboutme/icon.png" %}">
+        </div>
+        <div class="p-40 lg:flex-grow mt-5 md:mt-0   md:w-1.5/2 lg:pr-24 md:pr-16 flex flex-col  items-center text-center">
+            <h1 class="text-xl text-center font-bold leading-9 tracking-tight mb-3 text-[#FE9BC7] sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+                About Me...
+            </h1>
+            <p class="text-center text-sm"> Je m'appelle Cristiana et je suis la créatrice de cette petite entreprise.
+                Je suis de nationalité potugaise mais je vis en France, l'année dernière je suis devenue
+                maman de ma petite Aurora.
+            </p>
+                <p class="text-center text-sm">L'idée m'est venue après m'être occupée de mon bébé et avoir utilisé mes compétences pour gagner un peu plus d'argent, pour donner une continuité à ce rêve d'observer les premières années de la vie de mon bébé.
+                J'espère que ma boutique vous plaira et que vous y trouverez un peu de réconfort. </p>
+
+                <p class="text-center text-sm">
+                    Si vous avez des questions, je suis à votre disposition via la page <a class=" text-[#FE9BC7]" href="#">Contact</a> </p>
+
+                    <p class="text-2xl font-bold mt-10">MERCI! </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

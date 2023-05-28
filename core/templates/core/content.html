@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<header class="flex justify-between w-full h-full flex-col">
+    <div class="h-[400px] w-full">
+        <div class="flex items-center justify-center bg-[#e9f8ff] p-10 h-[400px]">
+            <div class="p-4 bg-white">
+                <div class="border-2 border-solid border-zinc-500">
+                    <div class="p-4 h-[250px] w-[650px] flex justify-center items-center flex-col">
+                        <p class="text-[#fed6ec] font-bold text-5xl mb-[10px]">Nouveaux articles</p>
+                        <p class="mb-[30px]">Très délicieux dans toute la boutique</p>
+                        <a href="#" class="h-[30px] w-[150px] bg-[#fed6ec] hover:bg-[#ef5ea6] text-white flex justify-center items-center rounded-full transition duration-700 ease-in-out">VOIR ICI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 h-full">
+        <div class="products flex items-center flex-wrap">
+            <section class="text-gray-600 body-font bg-white dark:bg-slate-900">
+                <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+                    <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+                        <img class="object-cover object-center rounded" alt="hero" src="{% static "icon.png" %}">
+                    </div>
+                    <div class="p-20 lg:flex-grow mt-5 md:mt-0   md:w-1.5/2 lg:pr-24 md:pr-16 flex flex-col text-justify">
+                        <h1 class="text-xl text-center font-bold leading-9 tracking-tight mb-3 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">Bienvenue!</h1>
+                        <p class="text-justify text-sm">
+                            Je m'appelle Cristiana et je suis la créatrice de cette petite entreprise.
+                            Nous sommes une boutique en ligne de produits artisanaux très kawaii. Pour l'instant, nous n'avons pas de boutique physique, mais le processus d'achat est très facile et délicieux. Si vous avez des doutes, nous sommes là pour vous aider.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</header>
+
+
+{% endblock %}

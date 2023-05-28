@@ -1,0 +1,60 @@
+{% load static %}
+<nav class="border-b border-gray-300">
+    <div class="block lg:hidden bg-[#fe9bc7] h-[60px] flex items-center justify-end p-[10px] w-full">
+        <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-white border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
+        </button>
+    </div>
+    <div class="grid grid-cols-6 hidden lg:grid">
+        <div class="col-start-2 col-span-4 h-[100px]">
+            <ul class="flex items-center space-x-4 justify-between w-full">
+                <li><a class="hover:bg-[#fe9bc7] hover:text-white h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'product' %}">PRODUITS</a></li>
+                <li><a class="hover:bg-[#fe9bc7] hover:text-white h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'about-me' %}">ABOUT</a></li>
+                <a href="/" class="w-40"><img src="{% static "logo.png" %}" alt="logo" /></a>
+                <li><a class="hover:bg-[#fe9bc7] hover:text-white h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'faq' %}">FAQ</a></li>
+                <li><a class="hover:bg-[#fe9bc7] hover:text-white h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div class="flex justify-center items-center space-x-4">
+            {% if not request.user.is_authenticated %}
+                <a class="hover:text-[#e96bb9] transition duration-700 ease-in-out" href="logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+                </a>
+            {% else %}
+                <a class="hover:text-[#e96bb9] transition duration-700 ease-in-out" href="{% url 'login' %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                    </svg>
+                </a>
+            {% endif %}
+            <a class="hover:text-[#e96bb9] transition duration-700 ease-in-out" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+            {% include 'product/menu_cart.html' %}
+        </div>
+    </div>
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto pt-6 lg:pt-0 hidden lg:hidden bg-[#fe9bc7] text-white" id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+            <li><a class="hover:bg-white hover:text-[#fe9bc7] h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'product' %}">PRODUITS</a></li>
+            <li><a class="hover:bg-white hover:text-[#fe9bc7] h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'about-me' %}">ABOUT</a></li>
+            <li><a class="hover:bg-white hover:text-[#fe9bc7] h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'faq' %}">FAQ</a></li>
+            <li><a class="hover:bg-white hover:text-[#fe9bc7] h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'contact' %}">CONTACT</a></li>
+            {% if not request.user.is_authenticated %}
+                <li><a class="hover:bg-white hover:text-[#fe9bc7] h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="logout">LOGOUT</a></li>
+            {% else %}
+                <li><a class="hover:bg-white hover:text-[#fe9bc7] h-[100px] justify-center flex items-center px-8 transition duration-700 ease-in-out" href="{% url 'login' %}">LOGIN</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('nav-toggle').onclick = function(){
+        document.getElementById("nav-content").classList.toggle("hidden");
+    }
+</script>

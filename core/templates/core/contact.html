@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="w-2/5 bg-center bg-contain h-[850px] pt-[335px] mx-auto bg-no-repeat" style="background-image:url('{% static "contact/icon_contact.png" %}')">
+    <form class="p-6 flex flex-col justify-center">
+        <div class="flex flex-col m-auto">
+            <label for="name" class="hidden">Name</label>
+            <input type="name" name="name" id="name" placeholder="Full Name" class="w-96 text-sm  text-[#707070] mt-2 py-3 px-3 rounded-lg bg-white d border-solid border border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7]" style="background-color: #F5E2E4;">
+        </div>
+
+        <div class="flex flex-col m-auto mt-2">
+            <label for="email" class="hidden">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Email" class="w-96 text-sm text-[#707070] mt-2 py-3 px-3 rounded-lg bg-white d border-solid border border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7]" style="background-color: #F5E2E4;">
+        </div>
+
+        <div class="flex flex-col m-auto mt-2">
+            <label for="message" class="hidden">Message</label>
+            <textarea placeholder="Message" class="w-96 h-32 bg-[#F5E2E4] text-[#707070] mt-2 p-3 rounded-lg border-solid border border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer"></textarea>
+        </div>
+
+        <button type="submit" class=" m-auto md:w-32 bg-[#FE9BC7] text-white text-sm hover:bg-[#FED6EC] hover:text-white font-bold py-1 px-2 rounded-full mt-3  transition ease-in-out duration-700">
+            ENVOYER
+        </button>
+    </form>
+</div>
+{% endblock %}

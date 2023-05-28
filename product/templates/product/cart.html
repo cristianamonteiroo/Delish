@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<div class="flex flex-col justify-center items-center mt-20">
+    <div class="flex text-xl font-bold flex-col bg-grey w-[80%] p-4 mb-20">
+        <a href="">Procédure de paiement</a>
+    </div>
+    <div class="flex text-l items-center bg-grey w-[80%] p-4 mb-10">
+        <p class="w-[30px] rounded-full bg-[#fe9bc7] h-[30px] flex items-center justify-center text-white mr-4">1</p>
+        <p>CONFIRMER LA COMMANDE</p>
+    </div>
+    <div class="grid grid-cols-3 bg-grey w-[80%] p-4 mb-4 border-b border-solid border-gray-300">
+        <div class="col-start-1"><strong>Produit(s)</strong></div>
+        <div class=""><strong>Quantité</strong></div>
+        <div class=""><strong>Total</strong></div>
+    </div>
+    {% for item in items %}
+    <div class="grid grid-cols-3 bg-grey w-[80%] p-4 mb-4 border-b border-solid border-gray-300">
+        <div class="col-start-1 flex items-center">
+            <img width="200" class="row-image" src="/images/{{item.product.image}}" alt="NO IMAGE">
+            <p class="px-8">{{item.product.name}}</p>
+        </div>
+        <div class="flex items-center">
+            <div data-product="{{item.product.id}}" data-action="add" class="update-cart cursor-pointer hover:text-[#fe9bc7]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+            </div>
+            <p class="quantity w-[30px] rounded-full bg-[#fe9bc7] h-[30px] flex items-center justify-center text-white">{{item.quantity}}</p>
+            <div data-product="{{item.product.id}}" data-action="remove" class="update-cart cursor-pointer hover:text-[#fe9bc7]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <div class="quantity">
+                <p><p>{{item.get_total}}€</p></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="flex flex-col py-4 items-end w-[80%]">
+        <h5 class="w-[250px] flex justify-between py-2">Tous les produits:<strong>{{order.get_cart_items}}</strong></h5>
+        <h5 class="w-[250px] flex justify-between py-2">Prix total:<strong>€{{order.get_cart_total|floatformat:2}}</strong></h5>
+    </div>
+    <div class="flex text-l items-center bg-grey w-[80%] p-4">
+        <p class="w-[30px] rounded-full bg-[#fe9bc7] h-[30px] flex items-center justify-center text-white mr-4">2</p>
+        <p>PAIEMENT</p>
+    </div>
+    <div class="grid grid-cols-3 bg-grey w-[80%] p-4 mb-4 flex justify-start items-center">
+        <a class="h-[30px] w-[150px] bg-[#fed6ec] hover:bg-[#ef5ea6] text-white flex justify-center items-center rounded-full transition duration-700 ease-in-out" href="/checkout">NEXT</a>
+    </div>
+</div>
+
+{% endblock %}

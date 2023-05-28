@@ -1,0 +1,52 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body class="bg-no-repeat bg-cover bg-center" style="background-image:url('{% static "register/backgroud.png" %}')">
+<div class="flex w-[500px] min-h-screen flex-col justify-center items-center m-auto py-12">
+    <div class="">
+        <img class="mx-auto h-[200px] w-auto" src="{% static "logo.png" %}" alt="">
+        <h2 class="mt-10 text-center text-4xl font-bold leading-9 tracking-tight text-[#FE9BC7]">CRÉER UN COMPTE</h2>
+        <p class="text-center mt-4 text-[#707070]">En créant un compte, vous pouvez sauvegarder tous vos articles préférés, récapituler les commandes passées et même bénéficier de réductions pour les membres.</p>
+    </div>
+    <div class="mt-10 w-full">
+        {% for message in messages %}
+        <div class="font-bold text-red-700" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        <form method="post" action="/register" action="#" method="POST">
+            {% csrf_token %}
+            <div class="relative z-0 mt-4">
+                <input type="text" name="username" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" required placeholder="Username">
+            </div>
+            <div class="relative z-0 mt-4">
+                <input type="text" name="fname" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" required placeholder="Prenom">
+            </div>
+            <div class="relative z-0 mt-4">
+                <input type="text" name="lname" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" required placeholder="Nom">
+            </div>
+            <div class="relative z-0 mt-4">
+                <input type="email" name="email" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" required placeholder="Email">
+            </div>
+            <div class="relative z-0 mt-4">
+                <input type="password" name="pass1" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" required placeholder="Mot de Passe">
+            </div>
+            <div class="relative z-0 mt-4">
+                <input type="password" name="pass2" class="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-[#FE9BC7] dark:focus:border-[#FE9BC7] focus:outline-none focus:ring-0 focus:border-[#FE9BC7] peer" required placeholder="Confirmation du mot de passe">
+            </div>
+            <div class="flex flex-col items-center">
+                <button type="submit" class="w-[250px] h-[40px] text-xl flex items-center justify-center bg-[#FED6EC] hover:bg-[#FE9BC7] hover:text-white mt-10 text-white font-bold py-1 px-2 rounded-full transition ease-in-out duration-700">S'INSCRIRE</button>
+            </div>
+            <p class="mt-7 text-center text-sm text-gray-500">Vous avez déjà un compte ?</p>
+            <p class="mt-2 text-center text-xl"><a href="/login" class="font-semibold text-sm leading-6 text-[#FE9BC7]">Connectez-vous ici</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
