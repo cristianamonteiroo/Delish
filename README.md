@@ -50,9 +50,12 @@ Cette micro-entreprise si DELISHieuse propose à ses clients des produits faits 
 
 <summary><h3>Design 🎨</h3></summary>
 
-<details>
+- ####  Création de maquettes 🎨
+	
 	[![ADOBE XD](https://img.shields.io/badge/Adobe%20XD-470137?style=for-the-badge&logo=Adobe%20XD&logoColor=#FF61F6)](https://helpx.adobe.com/be_fr/xd/get-started.html)
-
+	
+- ####  Dessin de quelques éléments 🖋
+	
 	[![Procreate](https://apps.apple.com/fr/app/procreate/id425073498)]
 
 </details>
