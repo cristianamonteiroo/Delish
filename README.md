@@ -50,7 +50,7 @@ Cette micro-entreprise si DELISHieuse propose à ses clients des produits faits 
 
 <summary><h3>Design 🎨</h3></summary>
 
-
+<details>
 	[![ADOBE XD](https://img.shields.io/badge/Adobe%20XD-470137?style=for-the-badge&logo=Adobe%20XD&logoColor=#FF61F6)](https://helpx.adobe.com/be_fr/xd/get-started.html)
 
 	[![Procreate](https://apps.apple.com/fr/app/procreate/id425073498)]
@@ -69,7 +69,8 @@ Cette micro-entreprise si DELISHieuse propose à ses clients des produits faits 
  - ####  Exemple :
     Il va tester la creation des objects:
 
-	```python manage.py test
+	```code
+	python manage.py test
 	```
 	
 </details>
@@ -93,7 +94,7 @@ Cette micro-entreprise si DELISHieuse propose à ses clients des produits faits 
     <td align="center"><a href="https://github.com/cristianamonteiroo"><img src="https://avatars.githubusercontent.com/u/59604348?v=4" width="64px;" alt=""/><br /><sub><b>cristianamonteiroo</b></sub></a><br /><a href="https://github.com/cristianamonteiroo" title="Code">💻</a> <a title="Content">🖋</a> <a href="" title="Design">🎨</a><a href=""  </td>
    
 </td>
-
+</table>
 
 
 ## [8](#sommaire) - Copyright et licence
